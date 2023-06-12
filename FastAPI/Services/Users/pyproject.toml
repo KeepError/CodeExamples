@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "bluebox-users-service"
+version = "0.1.0dev1"
+description = ""
+authors = []
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+sqlalchemy = "^2.0.15"
+grpcio-tools = "^1.54.2"
+psycopg2 = "^2.9.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

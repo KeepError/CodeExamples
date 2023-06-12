@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+import "api_keys_objects.proto";
+
+service UserApiKeyAuthService {
+  rpc AuthenticateUser(AuthenticateUserRequest) returns (AuthenticateUserResponse);
+  rpc CreateUserApiKey(CreateUserApiKeyRequest) returns (CreateUserApiKeyResponse);
+  rpc DeleteUserApiKey(DeleteUserApiKeyRequest) returns (DeleteUserApiKeyResponse);
+  rpc GetUserApiKeysList(GetUserApiKeysListRequest) returns (GetUserApiKeysListResponse);
+  rpc GetUserApiKey(GetUserApiKeyRequest) returns (GetUserApiKeyResponse);
+}
+
+message AuthenticateUserRequest {
+  string api_key_string = 1;
+}
+
+message AuthenticateUserResponse {
+  optional string user_id = 1;
+  optional AuthApiKeysError error = 2;
+}
+
+message CreateUserApiKeyRequest {
+  string user_id = 1;
+  string name = 2;
+  string description = 3;
+}
+
+message CreateUserApiKeyResponse {
+  optional string api_key_string = 1;
+  optional AuthApiKeysError error = 2;
+}
+
+message DeleteUserApiKeyRequest {
+  string key_id = 1;
+}
+
+message DeleteUserApiKeyResponse {
+  optional ApiKey api_key = 1;
+  optional AuthApiKeysError error = 2;
+}
+
+message GetUserApiKeysListRequest {
+  string user_id = 1;
+}
+
+message GetUserApiKeysListResponse {
+  repeated ApiKey api_keys = 1;
+  optional AuthApiKeysError error = 2;
+}
+
+message GetUserApiKeyRequest {
+  string key_id = 1;
+}
+
+message GetUserApiKeyResponse {
+  optional ApiKey api_key = 1;
+  optional AuthApiKeysError error = 2;
+}

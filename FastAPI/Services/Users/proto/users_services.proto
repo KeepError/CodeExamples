@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+import "users_objects.proto";
+
+service UsersService {
+  rpc GetById(GetByIdRequest) returns (GetByIdResponse);
+  rpc Create(CreateRequest) returns (CreateResponse);
+}
+
+message GetByIdRequest {
+  string user_id = 1;
+}
+
+message GetByIdResponse {
+  optional User user = 1;
+  optional UsersError error = 2;
+}
+
+message CreateRequest {
+}
+
+message CreateResponse {
+  optional User user = 1;
+  optional UsersError error = 2;
+}

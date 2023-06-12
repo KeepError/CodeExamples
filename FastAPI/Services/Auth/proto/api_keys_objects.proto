@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+enum AuthApiKeysError {
+  UNKNOWN_AUTH_API_KEYS_ERROR = 0;
+  NOT_AUTHORIZED = 1;
+  INVALID_API_KEY = 2;
+  API_KEY_NOT_FOUND = 3;
+}
+
+
+message ApiKey {
+  string key_id = 1;
+  string name = 2;
+  string description = 3;
+  google.protobuf.Timestamp created_at = 4;
+}

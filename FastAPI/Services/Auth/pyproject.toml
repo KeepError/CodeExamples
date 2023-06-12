@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "bluebox-auth"
+version = "0.1.0dev1"
+description = ""
+authors = []
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+passlib = "^1.7.4"
+sqlalchemy = "^2.0.15"
+psycopg2 = "^2.9.6"
+grpcio-tools = "^1.54.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

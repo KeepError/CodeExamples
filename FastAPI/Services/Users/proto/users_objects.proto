@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+enum UsersError {
+  UNKNOWN_USERS_ERROR = 0;
+  USER_NOT_FOUND = 1;
+}
+
+message User {
+  string user_id = 1;
+  string email = 2;
+  int32 balance = 3;
+}
